@@ -6,7 +6,7 @@ Created on Sat Jun  1 15:53:46 2019
 """
 
 from tkinter import*
-#import application
+import app
 
 def main():
     root = Tk()
@@ -34,19 +34,25 @@ class App(Frame):
         grid(row = 0, column = 0, padx = 5, pady = 5, sticky = E)
 
     def creat_entry(self):
-        Entry(self, width = 20, textvariable = self.PicPath).grid(row = 1, column = 0,padx = 5)
+        Entry(self, width = 20, textvariable = self.PicPath). \
+        grid(row = 1, column = 0,padx = 5)
         
     def creat_button(self):
         Button(self, text = "开始识别", command = self.confirm). \
         grid(row = 2, columnspan = 2, padx = 5, pady = 5)
     def confirm(self):
-        a = self.PicPath.get()
-        print(a)
-        print(type(a))
+#        a = self.PicPath.get()
+#        print(a)
+#        print(type(a))
         #application.pre_pic(a)
-        b = 'D:\pic\0.png'
+#        b = 'D:\pic\0.png'
 #        application.pre_pic(b)
         #application.pre_pic(r'D:\pic\0.png')
-        #application.pre_pic(self.PicPath.get())
+        value = app.application(self.PicPath.get())
+        Label(self, text = ["识别出的数字是：",value]). \
+        grid(row = 3, column = 0, padx = 5, pady = 5)
+
+#        text = Text(self, )
+        
 if __name__ == "__main__":
     main()
