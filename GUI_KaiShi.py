@@ -17,15 +17,14 @@ def main():
     main_label.grid(row = 0, column = 0, padx = 30, pady = 5)
 
     #生成提示信息标签
-    choose_label = Label(root, text = "点击开始按钮进入系统")
+    choose_label = Label(root, text = "点击登陆按钮进入系统")
     choose_label.grid(row = 1, column = 0, padx = 30, pady = 5)
     
     #生成开始按钮
-    add_button = Button(root, text = "开始", bg = "light blue", command = GUI_CeShi.main)
+    add_button = Button(root, text = "登陆", bg = "light blue", command = GUI_CeShi.main)
     add_button.grid(row = 2, column = 0, padx = 30, pady = 5)
 
     root.mainloop()
-def shibie():
-    pass
+
 if __name__ == '__main__':
     main()
